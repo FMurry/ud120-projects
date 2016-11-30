@@ -27,4 +27,8 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 
-
+from sklearn import svm
+clf = svm.SVC(kernel = "linear", gamma = 1.0)
+clf.fit(features_train, labels_train)
+prettyPicture(clf,features_test,labels_test)
+plt.show()
